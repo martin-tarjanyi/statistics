@@ -1,0 +1,8 @@
+spring:
+  data:
+    cassandra:
+      contact-points: localhost
+
+security:
+  basic:
+    enabled: false
