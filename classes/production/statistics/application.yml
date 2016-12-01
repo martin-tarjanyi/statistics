@@ -2,6 +2,7 @@ spring:
   data:
     cassandra:
       contact-points: localhost
+      keyspace-name: spring
 
 security:
   basic:

@@ -2,13 +2,20 @@ package com.martin.model;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import org.springframework.data.cassandra.mapping.Column;
+import org.springframework.data.cassandra.mapping.PrimaryKey;
+import org.springframework.data.cassandra.mapping.Table;
 
 @ToString
 @EqualsAndHashCode
+@Table
 public class User
 {
-    public String name;
-    public char[] password;
+    @PrimaryKey
+    private String name;
+
+    @Column("password")
+    private String password;
 
     public String getName()
     {
@@ -20,12 +27,12 @@ public class User
         this.name = name;
     }
 
-    public char[] getPassword()
+    public String getPassword()
     {
         return password;
     }
 
-    public void setPassword(char[] password)
+    public void setPassword(String password)
     {
         this.password = password;
     }
