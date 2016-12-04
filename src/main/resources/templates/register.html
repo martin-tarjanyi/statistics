@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
+    <div class="error" th:if="${error} != null" th:text="${error}"></div>
+
     <form action="#" th:action="@{/register}" th:object="${user}" method="post">
         <fieldset>
             <legend>Registration form</legend>
