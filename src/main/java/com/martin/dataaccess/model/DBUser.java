@@ -1,4 +1,4 @@
-package com.martin.model;
+package com.martin.dataaccess.model;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -8,14 +8,24 @@ import org.springframework.data.cassandra.mapping.Table;
 
 @ToString
 @EqualsAndHashCode
-@Table
-public class User
+@Table("user")
+public class DBUser
 {
     @PrimaryKey
     private String name;
 
     @Column("password")
     private String password;
+
+    public DBUser()
+    {
+    }
+
+    public DBUser(String name, String password)
+    {
+        this.name = name;
+        this.password = password;
+    }
 
     public String getName()
     {
